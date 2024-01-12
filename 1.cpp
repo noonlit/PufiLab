@@ -35,7 +35,7 @@ int main()
     fopen_s(&file, filename, "r");
 
     if (file == NULL) {
-        perror("Error creating file");
+        perror("Error opening file");
         return 1;
     }
 
