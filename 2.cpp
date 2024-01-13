@@ -91,34 +91,35 @@ int main()
         return 1;
     }
 
-    int numbers[10];
-    for (int i = 0; i < 10; i++) {
+    const int n = 10;
+    int numbers[n];
+    for (int i = 0; i < n; i++) {
         fscanf_s(file, "%d ", &numbers[i]);
     }
 
     fclose(file);
 
     printf("Original Array: ");
-    for (int i = 0; i < 10; i++) {
+    for (int i = 0; i < n; i++) {
         printf("%d ", numbers[i]);
     }
     printf("\n");
 
-    bubbleSort(numbers, 10, compareAsc);
+    bubbleSort(numbers, n, compareAsc);
     printf("Ascending Order: ");
-    for (int i = 0; i < 10; i++) {
+    for (int i = 0; i < n; i++) {
         printf("%d ", numbers[i]);
     }
     printf("\n");
 
-    bubbleSort(numbers, 10, compareDesc);
+    bubbleSort(numbers, n, compareDesc);
     printf("Descending Order: ");
-    for (int i = 0; i < 10; i++) {
+    for (int i = 0; i < n; i++) {
         printf("%d ", numbers[i]);
     }
     printf("\n");
 
-    int evenCount = countEvenNumbers(numbers, 10);
+    int evenCount = countEvenNumbers(numbers, n);
     printf("Number of Even Numbers: %d\n", evenCount);
 
     return 0;
