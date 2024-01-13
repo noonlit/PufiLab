@@ -8,7 +8,8 @@ Write the functions that:
 
 #include <iostream>
 
-void swap(int* a, int* b) {
+void swap(int* a, int* b) 
+{
     int temp = *a;
     *a = *b;
     *b = temp;
@@ -24,7 +25,8 @@ bool compareAsc(int a, int b)
     return b < a;
 }
 
-void bubbleSort(int arr[], int n, bool (*compare)(int, int)) {
+void bubbleSort(int arr[], int n, bool (*compare)(int, int)) 
+{
     int i, j;
     bool swapped;
 
@@ -44,7 +46,8 @@ void bubbleSort(int arr[], int n, bool (*compare)(int, int)) {
     }
 }
 
-int countEvenNumbers(int arr[], int n) {
+int countEvenNumbers(int arr[], int n) 
+{
     int count = 0;
     for (int i = 0; i < n; i++) {
         if (arr[i] % 2 == 0) {
