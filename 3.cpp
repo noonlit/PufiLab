@@ -46,6 +46,8 @@ int main()
 
     fclose(file);
 
+    free(values);
+
     fopen_s(&file, filename, "r");
 
     if (file == NULL) {
