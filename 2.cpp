@@ -14,7 +14,17 @@ void swap(int* a, int* b) {
     *b = temp;
 }
 
-void bubbleSort(int arr[], int n, bool ascending) {
+bool compareDesc(int a, int b)
+{
+    return a < b;
+}
+
+bool compareAsc(int a, int b)
+{
+    return b < a;
+}
+
+void bubbleSort(int arr[], int n, bool (*compare)(int, int)) {
     int i, j;
     bool swapped;
 
@@ -22,7 +32,7 @@ void bubbleSort(int arr[], int n, bool ascending) {
         swapped = false;
 
         for (j = 0; j < n - i - 1; j++) {
-            if ((ascending && arr[j] > arr[j + 1]) || (!ascending && arr[j] < arr[j + 1])) {
+            if (compare(arr[j], arr[j + 1])) {
                 swap(&arr[j], &arr[j + 1]);
                 swapped = true;
             }
@@ -91,14 +101,14 @@ int main()
     }
     printf("\n");
 
-    bubbleSort(numbers, 10, true);
+    bubbleSort(numbers, 10, compareAsc);
     printf("Ascending Order: ");
     for (int i = 0; i < 10; i++) {
         printf("%d ", numbers[i]);
     }
     printf("\n");
 
-    bubbleSort(numbers, 10, false);
+    bubbleSort(numbers, 10, compareDesc);
     printf("Descending Order: ");
     for (int i = 0; i < 10; i++) {
         printf("%d ", numbers[i]);
