@@ -12,7 +12,6 @@ int main()
     scanf_s("%c", &c);
 
     int n;
-
     printf("Enter the integer value: ");
     scanf_s("%d", &n);
 
